@@ -13,8 +13,8 @@
   --rule: #D9D2C3;
   --comment-bg: #FFF6E5;
   --comment-border: #E0C97A;
-  --tooltip-bg: #1A1A1A;
-  --tooltip-fg: #FFFDF8;
+  --tooltip-bg: #FFFFFF;
+  --tooltip-border: #000000;
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "URW Palladio L", "Book Antiqua", Georgia, serif;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
@@ -365,11 +365,12 @@ sup.comment-anchor.active { background: var(--comment-bg); border-radius: 2px; }
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-/* --- Tooltip for references --- */
+/* --- Tooltip for references and stages --- */
 .tooltip {
   position: absolute;
-  background: var(--tooltip-bg);
-  color: var(--tooltip-fg);
+  background: var(--tooltip-bg, #FFFFFF);
+  color: var(--ink);
+  border: 1.5px solid var(--tooltip-border, #000000);
   padding: 0.5rem 0.75rem;
   border-radius: 4px;
   font-family: var(--sans);
@@ -380,16 +381,16 @@ sup.comment-anchor.active { background: var(--comment-bg); border-radius: 2px; }
   opacity: 0;
   transition: opacity 0.12s;
   line-height: 1.4;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 .tooltip.visible { opacity: 1; }
 .tooltip::after {
   content: "";
   position: absolute;
-  bottom: -6px;
+  bottom: -7px;
   left: 16px;
-  border: 6px solid transparent;
-  border-top-color: var(--tooltip-bg);
+  border: 7px solid transparent;
+  border-top-color: var(--tooltip-border, #000000);
   border-bottom: 0;
 }
 
@@ -422,6 +423,172 @@ sup.comment-anchor.active { background: var(--comment-bg); border-radius: 2px; }
   0%   { background: #FFE8B0; }
   100% { background: transparent; }
 }
+
+/* ============================================================
+   Interactive stage cycle (e.g., 7-stage marketing cycle)
+   ============================================================ */
+.stage-cycle {
+  margin: 1.5rem auto;
+  max-width: 700px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "svg btns"
+    "cap cap";
+  gap: 0.5rem 1rem;
+  align-items: center;
+  position: relative;
+  --cycle-accent: var(--crimson);
+}
+
+/* Always-on hint badge (hides after click, returns on mouse re-entry) */
+.cycle-svg-wrap {
+  grid-area: svg;
+  position: relative;
+}
+.cycle-hint {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #D0D0D0;
+  color: #333333;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 5;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+.cycle-hint-icon {
+  display: inline-block;
+  margin-right: 0.35rem;
+  animation: hint-bounce 1.2s ease-in-out infinite;
+}
+@keyframes hint-bounce {
+  0%, 100% { transform: translateX(0); }
+  50%      { transform: translateX(4px); }
+}
+.stage-cycle.hint-hidden .cycle-hint {
+  opacity: 0;
+}
+.stage-cycle svg { width: 100%; height: auto; display: block; grid-area: svg; }
+.stage-cycle figcaption { grid-area: cap; }
+
+/* Case-study buttons */
+.case-buttons {
+  grid-area: btns;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 120px;
+}
+.case-btn {
+  --brand: #5B5B5B;
+  padding: 0.45rem 0.7rem;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  border: 2px solid var(--brand);
+  background: var(--ivory);
+  color: var(--brand);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, transform 0.1s;
+  text-align: left;
+  white-space: nowrap;
+}
+.case-btn:hover { background: var(--brand); color: var(--ivory); }
+.case-btn.active {
+  background: var(--brand);
+  color: var(--ivory);
+  box-shadow: 0 0 0 2px var(--ivory), 0 0 0 4px var(--brand);
+}
+.case-btn.reset {
+  font-style: italic;
+  margin-top: 0.4rem;
+  border-style: dashed;
+}
+.stage-cycle .cycle-path {
+  fill: none;
+  stroke: var(--cycle-accent, var(--crimson));
+  stroke-width: var(--cycle-path-width, 1.5);
+  stroke-dasharray: var(--cycle-path-dash, 4 4);
+  opacity: var(--cycle-path-opacity, 0.45);
+}
+.stage-cycle .cycle-arrow {
+  fill: var(--cycle-accent, var(--crimson));
+}
+.stage-cycle .cycle-center {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 700;
+  fill: var(--cycle-accent, var(--crimson));
+  text-anchor: middle;
+}
+.stage-cycle .cycle-center-sub {
+  font-family: sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  fill: var(--muted);
+  text-anchor: middle;
+}
+.stage-node { cursor: help; }
+.stage-node .stage-bg {
+  fill: var(--cycle-tint, var(--ivory));
+  stroke: var(--cycle-accent, var(--crimson));
+  stroke-width: var(--stage-stroke-width, 2);
+  transition: fill 0.4s ease, stroke 0.4s ease, stroke-width 0.4s ease, r 0.15s;
+}
+.stage-cycle .cycle-path,
+.stage-cycle .cycle-arrow,
+.stage-cycle .cycle-center,
+.stage-cycle .stage-num,
+.stage-cycle .stage-label,
+.stage-cycle .stage-bg {
+  transition: fill 0.4s ease, stroke 0.4s ease, stroke-dasharray 0.4s ease,
+              stroke-width 0.4s ease, opacity 0.4s ease;
+}
+.stage-cycle.case-active .stage-num {
+  font-size: 14px;
+  font-weight: 800;
+}
+.stage-cycle.case-active .stage-label {
+  font-weight: 600;
+}
+.stage-cycle.case-active .cycle-center {
+  font-size: 17px;
+}
+.stage-node:hover .stage-bg {
+  fill: var(--cycle-accent, var(--crimson));
+  fill-opacity: 1;
+  stroke: var(--cycle-accent, var(--crimson));
+}
+.stage-node .stage-num {
+  font-family: sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  fill: var(--cycle-accent, var(--crimson));
+  text-anchor: middle;
+  pointer-events: none;
+  transition: fill 0.15s;
+}
+.stage-node:hover .stage-num { fill: var(--ivory); }
+.stage-node .stage-label {
+  font-family: sans-serif;
+  font-size: 10px;
+  fill: var(--stage-label-color, var(--ink));
+  text-anchor: middle;
+  pointer-events: none;
+  transition: fill 0.15s;
+}
+.stage-node:hover .stage-label { fill: var(--ivory); }
 
 /* ============================================================
    Responsive

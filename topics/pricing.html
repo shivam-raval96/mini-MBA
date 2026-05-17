@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing Strategy — Mini-MBA Notes</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="site-title">Mini-MBA Notes</h1>
+      <p class="site-tagline">Harvard Mini-MBA · Interactive Notes &amp; Diagrams</p>
+    </div>
+  </header>
+
+  <div class="topic-page">
+    <nav class="toc">
+      <a href="../index.html" class="home-link">← All topics</a>
+      <p class="toc-title">On this page</p>
+      <ul id="toc-list"></ul>
+    </nav>
+
+    <article class="topic-content">
+      <h1>Pricing Strategy</h1>
+      <p class="subtitle">Willingness-to-pay, elasticity, and capturing value.</p>
+
+      <h2>Three pricing logics</h2>
+      <p>
+        Firms set prices using one of three logics: <em>cost-plus</em>,
+        <em>competition-based</em>, or <em>value-based</em>
+        <sup class="comment-anchor" data-comment="c1">1</sup>. Cost-plus is
+        operationally simple but ignores the customer; competition-based anchors
+        on rivals and races to the floor;
+        <span class="ref" data-ref="r-nagle">value-based pricing</span> starts from
+        the customer's willingness-to-pay (WTP) and captures the largest share of
+        created value.
+      </p>
+
+      <div class="term">
+        <span class="term-name">Willingness-to-pay (WTP)</span>
+        The maximum price at which a specific customer will still buy. Aggregating
+        WTP across customers gives the demand curve.
+      </div>
+
+      <h2>The value stick</h2>
+      <p>
+        A simple mental model from <span class="ref" data-ref="r-felix">Felix Oberholzer-Gee</span>:
+        value created = WTP − cost. Price splits that value between customer
+        surplus (WTP − price) and firm margin (price − cost)
+        <sup class="comment-anchor" data-comment="c2">2</sup>.
+      </p>
+
+      <figure>
+        <svg viewBox="0 0 460 260" role="img" aria-label="Value stick diagram">
+          <defs>
+            <style>
+              .vs-stick { stroke:#1A1A1A; stroke-width:2; fill:none; }
+              .vs-tick  { stroke:#1A1A1A; stroke-width:2; }
+              .vs-lab   { font-family:'Iowan Old Style', serif; font-size:14px; fill:#1A1A1A; }
+              .vs-band  { font-family: sans-serif; font-size:12px; fill:#5B5B5B; font-style:italic; }
+              .vs-cs    { fill:#FFE8B0; }
+              .vs-mg    { fill:#A51C30; opacity:0.18; }
+              .vs-cost  { fill:#D9D2C3; }
+            </style>
+          </defs>
+          <!-- Bands -->
+          <rect class="vs-cs"   x="180" y="40"  width="60" height="50"/>
+          <rect class="vs-mg"   x="180" y="90"  width="60" height="70"/>
+          <rect class="vs-cost" x="180" y="160" width="60" height="60"/>
+          <!-- Stick line -->
+          <line class="vs-stick" x1="210" y1="40" x2="210" y2="220"/>
+          <!-- Ticks -->
+          <line class="vs-tick" x1="195" y1="40"  x2="225" y2="40"/>
+          <line class="vs-tick" x1="195" y1="90"  x2="225" y2="90"/>
+          <line class="vs-tick" x1="195" y1="160" x2="225" y2="160"/>
+          <line class="vs-tick" x1="195" y1="220" x2="225" y2="220"/>
+          <!-- Labels -->
+          <text class="vs-lab" x="245" y="44">WTP</text>
+          <text class="vs-lab" x="245" y="94">Price</text>
+          <text class="vs-lab" x="245" y="164">Cost</text>
+          <text class="vs-lab" x="245" y="224">Supplier WTS</text>
+          <text class="vs-band" x="100" y="70" text-anchor="end">Customer delight</text>
+          <text class="vs-band" x="100" y="130" text-anchor="end">Firm margin</text>
+          <text class="vs-band" x="100" y="195" text-anchor="end">Supplier surplus</text>
+        </svg>
+        <figcaption>Figure 1. The value stick: where price falls determines how value is divided.</figcaption>
+      </figure>
+
+      <h2>Price elasticity of demand</h2>
+      <p>
+        Elasticity ε = (% Δ quantity) / (% Δ price). When |ε| &gt; 1 demand is
+        elastic — price cuts raise revenue. When |ε| &lt; 1 demand is inelastic —
+        price hikes raise revenue<sup class="comment-anchor" data-comment="c3">3</sup>.
+      </p>
+
+      <div class="term">
+        <span class="term-name">Optimal markup rule</span>
+        For a monopolist: (P − MC) / P = 1 / |ε|. The less elastic the demand,
+        the higher the optimal margin.
+      </div>
+
+      <h3>Drivers of elasticity</h3>
+      <ul>
+        <li>Availability of substitutes (more substitutes → more elastic).</li>
+        <li>Share of wallet (big-ticket items → more elastic).</li>
+        <li>Urgency / necessity (urgent or essential → less elastic).</li>
+        <li>Switching costs (high lock-in → less elastic).</li>
+      </ul>
+
+      <h2>Price discrimination</h2>
+      <p>
+        Charging different prices to different customers for (nearly) the same
+        product captures more of the WTP curve
+        <span class="ref" data-ref="r-shapiro"></span>.
+      </p>
+      <table>
+        <thead>
+          <tr><th>Degree</th><th>Mechanism</th><th>Example</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1st</td><td>Personalized price per customer</td><td>Negotiated B2B, dynamic pricing</td></tr>
+          <tr><td>2nd</td><td>Self-selection via versions</td><td>Economy / business class, tiers</td></tr>
+          <tr><td>3rd</td><td>Group pricing</td><td>Student / senior discounts</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Behavioral pricing</h2>
+      <p>
+        Buyers are not rational utility maximizers. <em>Anchoring</em> sets a
+        reference point that pulls perceived value
+        <sup class="comment-anchor" data-comment="c4">4</sup>. The
+        <em>decoy effect</em>: adding a clearly inferior option boosts the target
+        option's chosen rate<span class="ref" data-ref="r-ariely"></span>.
+        <em>Charm pricing</em> ($9.99) and <em>price framing</em>
+        ("$1/day" vs "$365/year") meaningfully shift demand.
+      </p>
+
+      <h2>Dynamic and freemium models</h2>
+      <p>
+        Dynamic pricing (airlines, ride-share, e-commerce) treats price as a
+        real-time signal that clears the market. Freemium gives away a baseline
+        product to harvest data and convert a small percentage to paid tiers; it
+        works only when the marginal cost of a free user is near zero and there
+        is a meaningful upgrade trigger.
+      </p>
+
+      <blockquote>
+        "Price is what you pay. Value is what you get." — Warren Buffett
+      </blockquote>
+
+      <section class="references">
+        <h2>References</h2>
+        <ol>
+          <li id="r-nagle">Nagle, T. T., &amp; Müller, G. (2017). <em>The Strategy and Tactics of Pricing</em>, 6th ed. Routledge.</li>
+          <li id="r-felix">Oberholzer-Gee, F. (2021). <em>Better, Simpler Strategy.</em> Harvard Business Review Press.</li>
+          <li id="r-shapiro">Shapiro, C., &amp; Varian, H. R. (1998). <em>Information Rules.</em> Harvard Business School Press.</li>
+          <li id="r-ariely">Ariely, D. (2008). <em>Predictably Irrational.</em> HarperCollins.</li>
+        </ol>
+      </section>
+    </article>
+
+    <aside class="comments-col">
+      <p class="comments-title">Margin notes</p>
+      <div class="comment" data-for="c1">
+        <span class="comment-num">1.</span>
+        Surveys consistently find cost-plus is the most-used method in practice yet the most-criticized in theory. Path of least internal resistance.
+      </div>
+      <div class="comment" data-for="c2">
+        <span class="comment-num">2.</span>
+        Symmetrically at the bottom: cost − supplier WTS = supplier surplus. Pushing supplier WTS down (better terms, lower friction) creates value too.
+      </div>
+      <div class="comment" data-for="c3">
+        <span class="comment-num">3.</span>
+        Most firms underestimate their own elasticity because they only observe one price point. A/B price tests reveal the true curve.
+      </div>
+      <div class="comment" data-for="c4">
+        <span class="comment-num">4.</span>
+        Classic Ariely experiment: Economist subscription bundle. Adding a "print only" decoy at the same price as "print + web" tripled the high-tier choice rate.
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Shivam Raval · <a href="https://shivam-raval96.github.io">shivam-raval96.github.io</a></p>
+  </footer>
+
+  <script src="../assets/script.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

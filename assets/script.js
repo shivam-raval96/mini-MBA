@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   buildTOC();
   positionComments();
   wireReferences();
+  wireTooltips();
   setupScrollSpy();
   setupCommentAnchorClicks();
 
@@ -145,6 +146,25 @@ function wireReferences() {
       void refSource.offsetWidth; // restart animation
       refSource.classList.add('flash');
     });
+  });
+}
+
+/* ---------- Generic [data-tooltip] hover tooltips ---------- */
+function wireTooltips() {
+  let tooltip = document.querySelector('.tooltip');
+  if (!tooltip) {
+    tooltip = document.createElement('div');
+    tooltip.className = 'tooltip';
+    document.body.appendChild(tooltip);
+  }
+  document.querySelectorAll('[data-tooltip]').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      tooltip.textContent = el.dataset.tooltip;
+      tooltip.classList.add('visible');
+      positionTooltip(tooltip, el);
+    });
+    el.addEventListener('mousemove', () => positionTooltip(tooltip, el));
+    el.addEventListener('mouseleave', () => tooltip.classList.remove('visible'));
   });
 }
 

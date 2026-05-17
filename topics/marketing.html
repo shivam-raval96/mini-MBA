@@ -25,6 +25,98 @@
       <h1>Marketing</h1>
       <p class="subtitle">Segmentation, positioning, and the marketing mix.</p>
 
+      <h2>Strategy development cycle</h2>
+      <p>
+        Marketing strategy is iterative. The seven stages below run as a loop —
+        outputs of each stage feed the next, and the final stage feeds back into
+        the first. Hover any stage for detail.
+      </p>
+
+      <figure class="stage-cycle" id="strategy-cycle">
+        <div class="case-buttons" aria-label="Case study selector">
+          <button class="case-btn"       data-case="cocacola"  style="--brand:#F40009">Coca-Cola</button>
+          <button class="case-btn"       data-case="ikea"      style="--brand:#0058A3">IKEA</button>
+          <button class="case-btn"       data-case="starbucks" style="--brand:#006241">Starbucks</button>
+          <button class="case-btn"       data-case="nike"      style="--brand:#111111">Nike</button>
+          <button class="case-btn reset" data-case="default"   style="--brand:#A51C30">Reset</button>
+        </div>
+        <div class="cycle-svg-wrap">
+          <div class="cycle-hint" aria-hidden="true">
+            <span class="cycle-hint-icon">👉</span><span>Click a brand to see its case-study cycle</span>
+          </div>
+        <svg viewBox="0 0 480 480" role="img" aria-label="7-stage marketing strategy cycle">
+          <!-- dashed cycle path through node centers -->
+          <circle class="cycle-path" cx="240" cy="240" r="165" fill="none" stroke="#A51C30" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.45"/>
+
+          <!-- center label -->
+          <text id="cycle-line1" class="cycle-center" x="240" y="232" fill="#A51C30" text-anchor="middle" font-family="Iowan Old Style, Palatino, serif" font-size="15" font-weight="700">Marketing</text>
+          <text id="cycle-line2" class="cycle-center" x="240" y="252" fill="#A51C30" text-anchor="middle" font-family="Iowan Old Style, Palatino, serif" font-size="15" font-weight="700">Strategy</text>
+          <text id="cycle-sub" class="cycle-center-sub" x="240" y="276" fill="#5B5B5B" text-anchor="middle" font-family="sans-serif" font-size="10" letter-spacing="0.8">7 STAGES · ITERATIVE</text>
+
+          <!-- Stage 1: Consumer Analysis (top, -90°) -->
+          <g class="stage-node" data-tooltip="Identify customer needs, segments, and buying behavior. Foundation for every downstream choice — get this wrong and the rest of the cycle compounds the error.">
+            <circle class="stage-bg" cx="240" cy="75" r="46" fill="#FFFDF8" stroke="#A51C30" stroke-width="2"/>
+            <text class="stage-num"   x="240" y="62" fill="#A51C30" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700">1</text>
+            <text class="stage-label" x="240" y="79" fill="#1A1A1A" text-anchor="middle" font-family="sans-serif" font-size="10"><tspan x="240" dy="0">Consumer</tspan><tspan x="240" dy="12">Analysis</tspan></text>
+          </g>
+
+          <!-- Stage 2: Market Analysis -->
+          <g class="stage-node" data-tooltip="Size the market, map growth and trends, scan regulatory and macroeconomic context. Defines the playing field.">
+            <circle class="stage-bg" cx="369" cy="137" r="46" fill="#FFFDF8" stroke="#A51C30" stroke-width="2"/>
+            <text class="stage-num"   x="369" y="124" fill="#A51C30" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700">2</text>
+            <text class="stage-label" x="369" y="141" fill="#1A1A1A" text-anchor="middle" font-family="sans-serif" font-size="10"><tspan x="369" dy="0">Market</tspan><tspan x="369" dy="12">Analysis</tspan></text>
+          </g>
+
+          <!-- Stage 3: Competitor & Self -->
+          <g class="stage-node" data-tooltip="Honest review of competitors' positions and your own strengths, weaknesses, and capabilities. Where can you win? Where are you exposed?">
+            <circle class="stage-bg" cx="401" cy="277" r="46" fill="#FFFDF8" stroke="#A51C30" stroke-width="2"/>
+            <text class="stage-num"   x="401" y="264" fill="#A51C30" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700">3</text>
+            <text class="stage-label" x="401" y="281" fill="#1A1A1A" text-anchor="middle" font-family="sans-serif" font-size="10"><tspan x="401" dy="0">Competitor</tspan><tspan x="401" dy="12">&amp; Self</tspan></text>
+          </g>
+
+          <!-- Stage 4: Distribution -->
+          <g class="stage-node" data-tooltip="Choose routes to market — direct, retail, digital, partner — balancing coverage, control, margin, and customer experience.">
+            <circle class="stage-bg" cx="312" cy="389" r="46" fill="#FFFDF8" stroke="#A51C30" stroke-width="2"/>
+            <text class="stage-num"   x="312" y="376" fill="#A51C30" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700">4</text>
+            <text class="stage-label" x="312" y="393" fill="#1A1A1A" text-anchor="middle" font-family="sans-serif" font-size="10"><tspan x="312" dy="0">Distribution</tspan><tspan x="312" dy="12">Channels</tspan></text>
+          </g>
+
+          <!-- Stage 5: Marketing Mix -->
+          <g class="stage-node" data-tooltip="Design the 4 Ps — product, price, place, promotion — so they reinforce a single coherent positioning. This is where strategy becomes action.">
+            <circle class="stage-bg" cx="168" cy="389" r="46" fill="#FFFDF8" stroke="#A51C30" stroke-width="2"/>
+            <text class="stage-num"   x="168" y="376" fill="#A51C30" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700">5</text>
+            <text class="stage-label" x="168" y="393" fill="#1A1A1A" text-anchor="middle" font-family="sans-serif" font-size="10"><tspan x="168" dy="0">Marketing</tspan><tspan x="168" dy="12">Mix</tspan></text>
+          </g>
+
+          <!-- Stage 6: Economic Evaluation -->
+          <g class="stage-node" data-tooltip="Forecast revenue, cost, margin, ROI, and payback. Stress-test the assumptions before committing capital and people.">
+            <circle class="stage-bg" cx="79"  cy="277" r="46" fill="#FFFDF8" stroke="#A51C30" stroke-width="2"/>
+            <text class="stage-num"   x="79"  y="264" fill="#A51C30" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700">6</text>
+            <text class="stage-label" x="79"  y="281" fill="#1A1A1A" text-anchor="middle" font-family="sans-serif" font-size="10"><tspan x="79" dy="0">Economic</tspan><tspan x="79" dy="12">Evaluation</tspan></text>
+          </g>
+
+          <!-- Stage 7: Evaluate & Revise -->
+          <g class="stage-node" data-tooltip="Measure outcomes against targets, learn, and iterate. Strategy is a loop, not a line — feeds back into Stage 1.">
+            <circle class="stage-bg" cx="111" cy="137" r="46" fill="#FFFDF8" stroke="#A51C30" stroke-width="2"/>
+            <text class="stage-num"   x="111" y="124" fill="#A51C30" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700">7</text>
+            <text class="stage-label" x="111" y="141" fill="#1A1A1A" text-anchor="middle" font-family="sans-serif" font-size="10"><tspan x="111" dy="0">Evaluate</tspan><tspan x="111" dy="12">&amp; Revise</tspan></text>
+          </g>
+
+          <!-- clockwise arrow markers between stages -->
+          <g fill="#A51C30">
+            <polygon class="cycle-arrow" points="0,-6 10,0 0,6" transform="translate(311.6,91.4) rotate(25.71)"/>
+            <polygon class="cycle-arrow" points="0,-6 10,0 0,6" transform="translate(400.9,203.3) rotate(77.14)"/>
+            <polygon class="cycle-arrow" points="0,-6 10,0 0,6" transform="translate(369.0,342.9) rotate(128.57)"/>
+            <polygon class="cycle-arrow" points="0,-6 10,0 0,6" transform="translate(240,405) rotate(180)"/>
+            <polygon class="cycle-arrow" points="0,-6 10,0 0,6" transform="translate(111.0,342.9) rotate(231.43)"/>
+            <polygon class="cycle-arrow" points="0,-6 10,0 0,6" transform="translate(79.1,203.3) rotate(282.86)"/>
+            <polygon class="cycle-arrow" points="0,-6 10,0 0,6" transform="translate(168.4,91.4) rotate(334.29)"/>
+          </g>
+        </svg>
+        </div>
+        <figcaption>Figure 1. The 7-stage marketing strategy development cycle. Hover any node.</figcaption>
+      </figure>
+
       <h2>STP framework</h2>
       <p>
         Marketing strategy follows a sequence: <em>Segmentation</em> →
@@ -128,5 +220,162 @@
 
   <script src="../assets/script.js"></script>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <!-- ===== Case-study switcher for the 7-stage cycle =====
+       Edit caseStudies below to add or modify cases. Each case has:
+         color  — accent color applied to SVG (match brand logo)
+         stages — array of 7 tooltip strings, one per stage in order
+  -->
+  <script>
+  (function () {
+    const defaultStages = Array.from(
+      document.querySelectorAll('#strategy-cycle g.stage-node')
+    ).map(g => g.dataset.tooltip);
+
+    const caseStudies = {
+      default: {
+        color: '#A51C30',
+        tint:  '#FFFDF8',
+        name:  'Marketing',
+        sub:   'Strategy',
+        subline: '7 STAGES · ITERATIVE',
+        stages: defaultStages
+      },
+      cocacola: {
+        color: '#F40009',
+        tint:  '#FDE4E5',
+        name:  'Coca-Cola',
+        sub:   'Beverages',
+        subline: 'CASE STUDY · CONSUMER GOODS',
+        stages: [
+          "Mass-market, all demographics. Coca-Cola targets the universal 'moment of refreshment' — emotional more than functional. Research focuses on occasions and feelings, not features.",
+          "Global non-alcoholic beverage market (~$1T). Mature in developed economies, growth in emerging markets. Headwinds: sugar regulation, health trends, water scarcity.",
+          "vs PepsiCo, local colas, water, juices, energy drinks. Moat: #1 brand recognition globally, distribution density, and the secret-formula mystique.",
+          "Bottlers + retailers + vending + food service. ~24M outlets worldwide. Distribution density IS the competitive advantage — 'within arm's reach of desire.'",
+          "Product: classic + diet + zero + flavors. Price: penny-profit, mass volume. Place: ubiquitous. Promotion: emotional storytelling (Share a Coke, Holidays Are Coming).",
+          "Operating margin ~30%, ROE ~40%. Capital-light franchise model (bottlers hold capex). KPIs: unit case volume, share of stomach, brand value.",
+          "Smaller pack sizes for affordability. Reformulation in sugar-tax markets. Acquisitions in still beverages (Costa, BodyArmor). Continuous flavor A/B testing."
+        ]
+      },
+      ikea: {
+        color: '#0058A3',
+        tint:  '#DDEBF7',
+        name:  'IKEA',
+        sub:   'Home Furnishings',
+        subline: 'CASE STUDY · RETAIL',
+        stages: [
+          "Young, value-conscious, design-aware households. The 'many people with thin wallets' philosophy. Customers trade their assembly time for a lower price.",
+          "Global home furnishings ~$700B, highly fragmented and mostly local. Tailwinds: urban density, smaller apartments, e-commerce acceleration post-2020.",
+          "vs local furniture retailers, Wayfair, Amazon. Self: vertical integration, Scandinavian design language, flat-pack logistics, destination big-box stores.",
+          "300K-sqft destination stores + growing city-format stores + click-and-collect + full e-commerce. Self-service warehouse model anchors the cost structure.",
+          "Product: democratic design. Price: low, posted upfront. Place: experiential stores with restaurant, childcare, café. Promotion: catalog (now digital), room-set inspiration.",
+          "Gross margin ~40%, sales ~€45B. KPIs: footfall, conversion, basket size, return rate. Logistics cost as % of sales watched closely.",
+          "Pivot to smaller urban formats. Online sales target 30%+. Assembly via TaskRabbit. Buyback / circular-economy programs. Loyalty (IKEA Family) for data."
+        ]
+      },
+      starbucks: {
+        color: '#006241',
+        tint:  '#DDEEE7',
+        name:  'Starbucks',
+        sub:   'Specialty Coffee',
+        subline: 'CASE STUDY · SERVICES',
+        stages: [
+          "Affluent urban professionals, daily coffee ritual. The 'third place' between home and work. Rewards membership reveals deep behavioral data per customer.",
+          "Global specialty coffee ~$100B, premiumization trend. Competitive pressure from local cafés, fast-food (McCafé), and at-home brewing (Nespresso, Keurig).",
+          "vs Dunkin', Costa, Tim Hortons, local cafés. Self: premium brand, store density, mobile order app, ~30M active Rewards members.",
+          "~38K stores globally (company-owned + licensed). Mobile order & pay drives ~30% of US transactions. Grocery channel for packaged coffee and ready-to-drink.",
+          "Product: signature drinks + seasonal (PSL). Price: premium, anchored by experience. Place: third place + drive-thru. Promotion: minimal traditional ads, heavy Rewards/seasonal pushes.",
+          "Operating margin ~15%, AUV ~$1.5M per store. KPIs: same-store sales, ticket size, Rewards growth, mobile order share, throughput.",
+          "Reinventing for drive-thru and mobile-first. Closing underperforming stores. Pickup-format pilots. Sustainability targets reshape supply chain."
+        ]
+      },
+      nike: {
+        color: '#111111',
+        tint:  '#E8E8E8',
+        name:  'Nike',
+        sub:   'Athletic Apparel',
+        subline: 'CASE STUDY · APPAREL',
+        stages: [
+          "Athletes, broadly defined ('If you have a body, you are an athlete'). Segmented by sport, gender, performance vs lifestyle, and direct fan communities.",
+          "Global athletic apparel ~$400B. Tailwinds: sneaker culture, athleisure, women's sport investment, emerging markets. Pressure: sustainability and labor scrutiny.",
+          "vs Adidas, Puma, Lululemon, On, Hoka. Self: brand authority, athlete partnerships, innovation pipeline (Air, Flyknit), and a growing data layer via Nike app.",
+          "Aggressive shift to DTC: Nike.com, Nike app, owned stores. Wholesale narrowed to selective retailers. Exited undifferentiated channels (Amazon, off-price).",
+          "Product: performance + lifestyle hero franchises. Price: premium, tiered. Place: DTC-first. Promotion: athlete storytelling, cultural moments, 'Just Do It.'",
+          "Gross margin ~45%; DTC accretive. KPIs: DTC %, app downloads, full-price sell-through, inventory turn, membership growth.",
+          "Consumer Direct Offense → Acceleration. Over-rotated on cutting wholesale; recent correction: reinvesting in select wholesale and store experience."
+        ]
+      }
+    };
+
+    const figure = document.getElementById('strategy-cycle');
+    const buttons = figure.querySelectorAll('.case-btn');
+
+    function hexToRgba(hex, alpha) {
+      const h = hex.replace('#', '');
+      const r = parseInt(h.substring(0,2), 16);
+      const g = parseInt(h.substring(2,4), 16);
+      const b = parseInt(h.substring(4,6), 16);
+      return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+    }
+
+    function applyCase(id) {
+      const cs = caseStudies[id] || caseStudies.default;
+      const color = cs.color;
+      const isCase = id !== 'default';
+      const tintFill = cs.tint || '#FFFDF8';
+
+      // Drive all SVG visuals via CSS variables on the figure (CSS rules read these).
+      figure.style.setProperty('--cycle-accent', color);
+      figure.style.setProperty('--cycle-tint', isCase ? tintFill : '#FFFDF8');
+      figure.style.setProperty('--stage-label-color', isCase ? color : '#1A1A1A');
+      figure.style.setProperty('--stage-stroke-width', '2');
+      figure.style.setProperty('--cycle-path-dash', isCase ? '0' : '4 4');
+      figure.style.setProperty('--cycle-path-width', '1.5');
+      figure.style.setProperty('--cycle-path-opacity', isCase ? '0.75' : '0.45');
+
+      // Center text swap.
+      const line1 = figure.querySelector('#cycle-line1');
+      const line2 = figure.querySelector('#cycle-line2');
+      const sub   = figure.querySelector('#cycle-sub');
+      if (line1) line1.textContent = cs.name || 'Marketing';
+      if (line2) line2.textContent = cs.sub  || 'Strategy';
+      if (sub)   sub.textContent   = cs.subline || '7 STAGES · ITERATIVE';
+
+      figure.classList.toggle('case-active', isCase);
+
+      // Swap tooltips per stage.
+      figure.querySelectorAll('g.stage-node').forEach((g, i) => {
+        if (cs.stages[i]) g.dataset.tooltip = cs.stages[i];
+      });
+
+      // Tooltip element tint per case.
+      const tooltipEl = document.querySelector('.tooltip');
+      if (tooltipEl) {
+        if (isCase) {
+          tooltipEl.style.setProperty('--tooltip-bg', hexToRgba(color, 0.12));
+          tooltipEl.style.setProperty('--tooltip-border', color);
+        } else {
+          tooltipEl.style.removeProperty('--tooltip-bg');
+          tooltipEl.style.removeProperty('--tooltip-border');
+        }
+      }
+
+      // Toggle active button.
+      buttons.forEach(b => b.classList.toggle('active', b.dataset.case === id));
+    }
+
+    buttons.forEach(b => {
+      b.addEventListener('click', () => {
+        applyCase(b.dataset.case);
+        figure.classList.add('hint-hidden');
+      });
+    });
+
+    // Re-show hint when mouse leaves the figure.
+    figure.addEventListener('mouseleave', () => {
+      figure.classList.remove('hint-hidden');
+    });
+  })();
+  </script>
 </body>
 </html>
