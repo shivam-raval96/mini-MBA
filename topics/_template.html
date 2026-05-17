@@ -1,0 +1,83 @@
+<!--
+  ===========================================================================
+  TOPIC TEMPLATE
+  Copy this file to topics/<your-topic>.html, rename, then:
+    1. Update <title>, <h1>, and <p class="subtitle">.
+    2. Write sections inside <article class="topic-content">. Use <h2>/<h3>;
+       the left TOC is built automatically from those headings.
+    3. To add a margin comment:
+         in text:  <sup class="comment-anchor" data-comment="cX">N</sup>
+         in aside: <div class="comment" data-for="cX">...</div>
+    4. To cite a reference:
+         <span class="ref" data-ref="r-key">cited phrase</span>
+         and add <li id="r-key">Full citation.</li> in <section class="references">.
+         Tooltip preview + auto-numbered superscript are added by JS.
+    5. Add a link to this page in ../index.html under the topics list.
+  ===========================================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Topic Title — Mini-MBA Notes</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="site-title">Mini-MBA Notes</h1>
+      <p class="site-tagline">Harvard Mini-MBA · Interactive Notes &amp; Diagrams</p>
+    </div>
+  </header>
+
+  <div class="topic-page">
+    <nav class="toc">
+      <a href="../index.html" class="home-link">← All topics</a>
+      <p class="toc-title">On this page</p>
+      <ul id="toc-list"></ul>
+    </nav>
+
+    <article class="topic-content">
+      <h1>Topic Title</h1>
+      <p class="subtitle">One-line subtitle.</p>
+
+      <h2>First section</h2>
+      <p>
+        Body paragraph with a comment marker<sup class="comment-anchor" data-comment="c1">1</sup>
+        and a <span class="ref" data-ref="r-example">reference</span> in it.
+      </p>
+
+      <div class="term">
+        <span class="term-name">Term Name</span>
+        Definition or quick description goes here.
+      </div>
+
+      <h2>Second section</h2>
+      <p>More content.</p>
+
+      <section class="references">
+        <h2>References</h2>
+        <ol>
+          <li id="r-example">Author (Year). <em>Title.</em> Publisher.</li>
+        </ol>
+      </section>
+    </article>
+
+    <aside class="comments-col">
+      <p class="comments-title">Margin notes</p>
+      <div class="comment" data-for="c1">
+        <span class="comment-num">1.</span>
+        This comment aligns with the matching superscript on the left.
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Shivam Raval · <a href="https://shivam-raval96.github.io">shivam-raval96.github.io</a></p>
+  </footer>
+
+  <script src="../assets/script.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

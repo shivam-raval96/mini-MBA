@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini-MBA Notes — Shivam Raval</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body class="home">
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="site-title">Mini-MBA Notes</h1>
+      <p class="site-tagline">Harvard Mini-MBA · Interactive Notes &amp; Diagrams</p>
+    </div>
+  </header>
+
+  <main class="home-main">
+    <!-- EDIT: intro paragraph -->
+    <section class="intro">
+      <p>
+        These are my evolving notes from the Harvard Mini-MBA program. Each topic
+        has its own page with diagrams, terminology, margin commentary, and
+        references. The site is designed for browsing concepts side-by-side
+        with explanations.
+      </p>
+      <p>
+        Click a topic below to dive in. Hover citations to preview the source;
+        margin notes (right side) point to specific passages.
+      </p>
+    </section>
+
+    <!-- EDIT: topics list. Add a new <li> per topic. -->
+    <section class="topic-grid">
+      <h2>Topics</h2>
+      <ul class="topics">
+        <li>
+          <a href="topics/strategy.html">
+            <span class="topic-num">01</span>
+            <span class="topic-name">Strategy</span>
+            <span class="topic-desc">Competitive positioning, Porter's Five Forces, value chains.</span>
+          </a>
+        </li>
+        <li>
+          <a href="topics/finance.html">
+            <span class="topic-num">02</span>
+            <span class="topic-name">Corporate Finance</span>
+            <span class="topic-desc">Time value of money, NPV, capital structure, WACC.</span>
+          </a>
+        </li>
+        <li>
+          <a href="topics/marketing.html">
+            <span class="topic-num">03</span>
+            <span class="topic-name">Marketing</span>
+            <span class="topic-desc">Segmentation, positioning, 4 Ps, customer lifetime value.</span>
+          </a>
+        </li>
+        <li>
+          <a href="topics/accounting.html">
+            <span class="topic-num">04</span>
+            <span class="topic-name">Accounting</span>
+            <span class="topic-desc">Balance sheets, income statements, cash flow basics.</span>
+          </a>
+        </li>
+        <li>
+          <a href="topics/operations.html">
+            <span class="topic-num">05</span>
+            <span class="topic-name">Operations</span>
+            <span class="topic-desc">Process design, lean, capacity, bottlenecks.</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Shivam Raval · <a href="https://shivam-raval96.github.io">shivam-raval96.github.io</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

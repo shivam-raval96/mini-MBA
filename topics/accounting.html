@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accounting — Mini-MBA Notes</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="site-title">Mini-MBA Notes</h1>
+      <p class="site-tagline">Harvard Mini-MBA · Interactive Notes &amp; Diagrams</p>
+    </div>
+  </header>
+
+  <div class="topic-page">
+    <nav class="toc">
+      <a href="../index.html" class="home-link">← All topics</a>
+      <p class="toc-title">On this page</p>
+      <ul id="toc-list"></ul>
+    </nav>
+
+    <article class="topic-content">
+      <h1>Accounting</h1>
+      <p class="subtitle">Reading the three financial statements.</p>
+
+      <h2>The accounting equation</h2>
+      <p>
+        Every transaction preserves <strong>Assets = Liabilities + Equity</strong>
+        <sup class="comment-anchor" data-comment="c1">1</sup>. The balance sheet is a
+        snapshot at a moment; the income statement and cash flow statement explain
+        what changed between snapshots.
+      </p>
+
+      <div class="term">
+        <span class="term-name">Balance Sheet</span>
+        Stocks at a point in time. Lists what the firm owns (assets), owes
+        (liabilities), and the residual claim of owners (equity).
+      </div>
+      <div class="term">
+        <span class="term-name">Income Statement</span>
+        Flows over a period: revenue − expenses = net income. Accrual basis.
+      </div>
+      <div class="term">
+        <span class="term-name">Cash Flow Statement</span>
+        Reconciles net income to actual cash, split into operating, investing,
+        and financing activities.
+      </div>
+
+      <h2>Accrual vs cash accounting</h2>
+      <p>
+        Accrual recognizes revenue when earned and expenses when incurred — not when
+        cash moves<span class="ref" data-ref="r-fasb"></span>. This better matches
+        economic activity to periods but creates a gap between net income and cash
+        flow<sup class="comment-anchor" data-comment="c2">2</sup>.
+      </p>
+
+      <h2>Key ratios</h2>
+      <table>
+        <thead>
+          <tr><th>Ratio</th><th>Formula</th><th>Tells you</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Gross margin</td><td>(Rev − COGS) / Rev</td><td>Unit economics</td></tr>
+          <tr><td>Current ratio</td><td>Current assets / Current liab.</td><td>Short-term liquidity</td></tr>
+          <tr><td>Debt / Equity</td><td>Total debt / Total equity</td><td>Leverage</td></tr>
+          <tr><td>ROE</td><td>Net income / Equity</td><td>Return to shareholders</td></tr>
+          <tr><td>ROA</td><td>Net income / Total assets</td><td>Asset productivity</td></tr>
+        </tbody>
+      </table>
+
+      <h2>DuPont decomposition</h2>
+      <p>
+        ROE = Net margin × Asset turnover × Equity multiplier. This
+        <span class="ref" data-ref="r-penman">decomposition</span> isolates whether
+        returns come from profitability, efficiency, or leverage
+        <sup class="comment-anchor" data-comment="c3">3</sup>.
+      </p>
+
+      <section class="references">
+        <h2>References</h2>
+        <ol>
+          <li id="r-fasb">FASB. (2018). <em>Conceptual Framework for Financial Reporting.</em> Financial Accounting Standards Board.</li>
+          <li id="r-penman">Penman, S. H. (2013). <em>Financial Statement Analysis and Security Valuation</em>, 5th ed. McGraw-Hill.</li>
+        </ol>
+      </section>
+    </article>
+
+    <aside class="comments-col">
+      <p class="comments-title">Margin notes</p>
+      <div class="comment" data-for="c1">
+        <span class="comment-num">1.</span>
+        Double-entry bookkeeping enforces this identity automatically: every debit has an equal credit.
+      </div>
+      <div class="comment" data-for="c2">
+        <span class="comment-num">2.</span>
+        A profitable firm can still go bankrupt if working capital growth consumes cash faster than operations produce it.
+      </div>
+      <div class="comment" data-for="c3">
+        <span class="comment-num">3.</span>
+        High ROE driven mostly by leverage is fragile — it amplifies losses too.
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Shivam Raval · <a href="https://shivam-raval96.github.io">shivam-raval96.github.io</a></p>
+  </footer>
+
+  <script src="../assets/script.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

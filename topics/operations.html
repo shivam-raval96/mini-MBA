@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Operations — Mini-MBA Notes</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="site-title">Mini-MBA Notes</h1>
+      <p class="site-tagline">Harvard Mini-MBA · Interactive Notes &amp; Diagrams</p>
+    </div>
+  </header>
+
+  <div class="topic-page">
+    <nav class="toc">
+      <a href="../index.html" class="home-link">← All topics</a>
+      <p class="toc-title">On this page</p>
+      <ul id="toc-list"></ul>
+    </nav>
+
+    <article class="topic-content">
+      <h1>Operations</h1>
+      <p class="subtitle">Process design, flow, and capacity.</p>
+
+      <h2>Process view of a firm</h2>
+      <p>
+        Operations transforms inputs into outputs through a network of activities
+        <sup class="comment-anchor" data-comment="c1">1</sup>. The basic primitives
+        are <em>flow units</em>, <em>resources</em>, and <em>buffers</em>.
+      </p>
+
+      <h2>Little's Law</h2>
+      <div class="term">
+        <span class="term-name">Little's Law</span>
+        Inventory (I) = Throughput (R) × Flow Time (T). A steady-state identity that
+        holds for any stable process, regardless of distribution.
+      </div>
+      <p>
+        Little's Law<span class="ref" data-ref="r-little"></span> lets you infer any
+        one of the three from the other two — e.g., measure throughput and inventory
+        to back out average flow time<sup class="comment-anchor" data-comment="c2">2</sup>.
+      </p>
+
+      <h2>Bottlenecks and capacity</h2>
+      <p>
+        Process capacity = capacity of the bottleneck. Improving non-bottleneck
+        resources does not raise output<span class="ref" data-ref="r-goldratt"></span>.
+        This is the foundational insight of the Theory of Constraints.
+      </p>
+
+      <h3>Five focusing steps</h3>
+      <ol>
+        <li>Identify the bottleneck.</li>
+        <li>Exploit it (squeeze every drop of capacity).</li>
+        <li>Subordinate everything else to the bottleneck.</li>
+        <li>Elevate the bottleneck (add capacity).</li>
+        <li>Return to step 1 — the bottleneck has moved.</li>
+      </ol>
+
+      <h2>Lean and Toyota Production System</h2>
+      <p>
+        Lean<span class="ref" data-ref="r-womack"></span> aims to eliminate seven
+        wastes (muda): overproduction, waiting, transport, over-processing,
+        inventory, motion, defects<sup class="comment-anchor" data-comment="c3">3</sup>.
+        Pull systems (kanban) replace push scheduling.
+      </p>
+
+      <section class="references">
+        <h2>References</h2>
+        <ol>
+          <li id="r-little">Little, J. D. C. (1961). A Proof for the Queuing Formula: L = λW. <em>Operations Research</em>, 9(3), 383–387.</li>
+          <li id="r-goldratt">Goldratt, E. M. (1984). <em>The Goal.</em> North River Press.</li>
+          <li id="r-womack">Womack, J. P., &amp; Jones, D. T. (1996). <em>Lean Thinking.</em> Simon &amp; Schuster.</li>
+        </ol>
+      </section>
+    </article>
+
+    <aside class="comments-col">
+      <p class="comments-title">Margin notes</p>
+      <div class="comment" data-for="c1">
+        <span class="comment-num">1.</span>
+        Process flow diagrams (PFDs) are the operations equivalent of org charts — they reveal where time and cost actually accumulate.
+      </div>
+      <div class="comment" data-for="c2">
+        <span class="comment-num">2.</span>
+        Example: ER sees 5 patients/hour and has 10 patients in beds → average stay = 2 hours.
+      </div>
+      <div class="comment" data-for="c3">
+        <span class="comment-num">3.</span>
+        Some practitioners add an 8th: unused human creativity.
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Shivam Raval · <a href="https://shivam-raval96.github.io">shivam-raval96.github.io</a></p>
+  </footer>
+
+  <script src="../assets/script.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

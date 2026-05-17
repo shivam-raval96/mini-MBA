@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corporate Finance — Mini-MBA Notes</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="site-title">Mini-MBA Notes</h1>
+      <p class="site-tagline">Harvard Mini-MBA · Interactive Notes &amp; Diagrams</p>
+    </div>
+  </header>
+
+  <div class="topic-page">
+    <nav class="toc">
+      <a href="../index.html" class="home-link">← All topics</a>
+      <p class="toc-title">On this page</p>
+      <ul id="toc-list"></ul>
+    </nav>
+
+    <article class="topic-content">
+      <h1>Corporate Finance</h1>
+      <p class="subtitle">The time value of money, valuation, and capital structure.</p>
+
+      <h2>Time value of money</h2>
+      <p>
+        A dollar today is worth more than a dollar tomorrow because today's dollar
+        can be invested at some rate <em>r</em><sup class="comment-anchor" data-comment="c1">1</sup>.
+        The two foundational operations are <em>compounding</em> (future value) and
+        <em>discounting</em> (present value).
+      </p>
+
+      <div class="term">
+        <span class="term-name">Present Value (PV)</span>
+        PV = CF / (1 + r)<sup>t</sup>. The value today of a cash flow CF received
+        at time t, discounted at rate r.
+      </div>
+
+      <figure>
+        <svg viewBox="0 0 480 180" role="img" aria-label="Cash flow timeline">
+          <defs>
+            <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#1A1A1A"/>
+            </marker>
+          </defs>
+          <line x1="30" y1="100" x2="450" y2="100" stroke="#1A1A1A" stroke-width="1.4" marker-end="url(#arr2)"/>
+          <g font-family="Iowan Old Style, serif" font-size="13" fill="#1A1A1A" text-anchor="middle">
+            <line x1="60"  y1="95" x2="60"  y2="105" stroke="#1A1A1A"/><text x="60"  y="125">t=0</text>
+            <line x1="150" y1="95" x2="150" y2="105" stroke="#1A1A1A"/><text x="150" y="125">t=1</text>
+            <line x1="240" y1="95" x2="240" y2="105" stroke="#1A1A1A"/><text x="240" y="125">t=2</text>
+            <line x1="330" y1="95" x2="330" y2="105" stroke="#1A1A1A"/><text x="330" y="125">t=3</text>
+            <line x1="420" y1="95" x2="420" y2="105" stroke="#1A1A1A"/><text x="420" y="125">t=4</text>
+          </g>
+          <g font-family="Iowan Old Style, serif" font-size="14" fill="#A51C30" text-anchor="middle" font-weight="700">
+            <text x="60"  y="80">−100</text>
+            <text x="150" y="80">+30</text>
+            <text x="240" y="80">+40</text>
+            <text x="330" y="80">+40</text>
+            <text x="420" y="80">+30</text>
+          </g>
+          <text x="240" y="160" font-family="Iowan Old Style, serif" font-size="12" fill="#5B5B5B" text-anchor="middle" font-style="italic">
+            Cash flows are placed on a timeline; each is discounted to t=0.
+          </text>
+        </svg>
+        <figcaption>Figure 1. A cash flow timeline. NPV sums all flows discounted to t=0.</figcaption>
+      </figure>
+
+      <h2>Net Present Value (NPV)</h2>
+      <p>
+        NPV = Σ CF<sub>t</sub> / (1 + r)<sup>t</sup>. The
+        <span class="ref" data-ref="r-brealey">NPV rule</span> says: accept any
+        project with positive NPV; among mutually exclusive projects, take the one
+        with the highest NPV<sup class="comment-anchor" data-comment="c2">2</sup>.
+      </p>
+
+      <h3>Why not IRR?</h3>
+      <p>
+        IRR (internal rate of return) gives the discount rate that makes NPV = 0.
+        It is intuitive but breaks down with non-conventional cash flows and
+        mis-ranks mutually exclusive projects of different scales.
+      </p>
+
+      <h2>Capital structure</h2>
+      <p>
+        A firm finances assets with debt and equity. The <span class="ref" data-ref="r-mm">Modigliani–Miller theorem</span>
+        (in a frictionless world) says capital structure is irrelevant to firm value.
+        Real-world frictions — taxes, bankruptcy costs, agency costs — make the
+        choice matter<sup class="comment-anchor" data-comment="c3">3</sup>.
+      </p>
+
+      <h3>WACC</h3>
+      <div class="term">
+        <span class="term-name">Weighted Average Cost of Capital</span>
+        WACC = (E/V) · r<sub>E</sub> + (D/V) · r<sub>D</sub> · (1 − T<sub>c</sub>).
+        The blended after-tax discount rate a firm should use for typical-risk projects.
+      </div>
+
+      <h2>CAPM and the cost of equity</h2>
+      <p>
+        The <span class="ref" data-ref="r-sharpe">Capital Asset Pricing Model</span>
+        prices the cost of equity as r<sub>E</sub> = r<sub>f</sub> + β · (r<sub>m</sub> − r<sub>f</sub>),
+        where β measures sensitivity to market risk.
+      </p>
+
+      <section class="references">
+        <h2>References</h2>
+        <ol>
+          <li id="r-brealey">Brealey, R., Myers, S., &amp; Allen, F. (2020). <em>Principles of Corporate Finance</em>, 13th ed. McGraw-Hill.</li>
+          <li id="r-mm">Modigliani, F., &amp; Miller, M. (1958). The Cost of Capital, Corporation Finance, and the Theory of Investment. <em>American Economic Review</em>, 48(3), 261–297.</li>
+          <li id="r-sharpe">Sharpe, W. F. (1964). Capital Asset Prices: A Theory of Market Equilibrium under Conditions of Risk. <em>Journal of Finance</em>, 19(3), 425–442.</li>
+        </ol>
+      </section>
+    </article>
+
+    <aside class="comments-col">
+      <p class="comments-title">Margin notes</p>
+      <div class="comment" data-for="c1">
+        <span class="comment-num">1.</span>
+        r reflects opportunity cost + risk + inflation. Choosing r is the hard part of any DCF.
+      </div>
+      <div class="comment" data-for="c2">
+        <span class="comment-num">2.</span>
+        NPV beats payback period and ARR because only NPV consistently maximizes shareholder value.
+      </div>
+      <div class="comment" data-for="c3">
+        <span class="comment-num">3.</span>
+        Trade-off theory: tax shield from debt vs. expected bankruptcy costs.
+        Pecking-order theory: managers prefer internal funds → debt → equity.
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Shivam Raval · <a href="https://shivam-raval96.github.io">shivam-raval96.github.io</a></p>
+  </footer>
+
+  <script src="../assets/script.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
